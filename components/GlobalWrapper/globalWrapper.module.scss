@@ -1,9 +1,26 @@
+@use "styles/const";
+
+.sectionAbout {
+  @extend %wrapper;
+  height: 200vh;
+}
+.sectionTeam {
+  @extend %wrapper;
+  height: 100vh;
+}
+
 .section {
   height: 100vh;
 }
 
-.container {
-  padding: 5rem;
+.container {}
+
+.title {
+  @extend %title;
+}
+.desc {
+  @extend %description;
+  margin-bottom: 16px;
 }
 
 .sticky_parent {

@@ -1,7 +1,7 @@
 import Header from '../Header';
-import styles from './globalWrapper.module.scss';
 import Image from "next/image";
 import { useEffect, useRef } from 'react';
+import styles from './globalWrapper.module.scss';
 
 const GlobalWrapper = ({ children }) => {
   const stickyRef = useRef(null);
@@ -9,10 +9,11 @@ const GlobalWrapper = ({ children }) => {
 
   const images = [
     '/car.jpg',
-    '/car2.jpeg',
     '/forest.jpg',
     '/house.jpg'
   ];
+
+  const descLorem = {};
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,28 +28,38 @@ const GlobalWrapper = ({ children }) => {
   }, []);
 
   function transform() {
-    const offsetTop = stickyRef.current.parentElement.offsetTop;
-    const scrollSection = scrollSectionRef.current;
-    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-    percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage;
-    scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
+    if (stickyRef.current.parentElement) {
+      const offsetTop = stickyRef.current.parentElement.offsetTop;
+      const scrollSection = scrollSectionRef.current;
+      if (scrollSection) {
+        let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+        percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage;
+        scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
+      }
+    }
   }
 
   return (
     <>
       <Header />
-      <section className={styles.section}>
-        <div className={styles.container}>
-          <h1>Hybrid Scroll</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
+      <section className={styles.sectionAbout}>
+        <h1 className={styles.title}>About Us</h1>
+        {[...Array(30)].map((_, index) => (
+          <p key={index} className={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
             molestiae nihil placeat praesentium saepe sint veniam! Ad adipisci cumque deserunt earum enim exercitationem
-            facilis soluta, ut.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
-            molestiae nihil placeat praesentium saepe sint veniam! Ad adipisci cumque deserunt earum enim exercitationem
-            facilis soluta, ut.</p>
-        </div>
+            facilis soluta, ut.
+          </p>
+        ))}
       </section>
-
+      <section className={styles.sectionTeam}>
+        <h1 className={styles.title}>Team</h1>
+        {[...Array(15)].map((_, index) => (
+          <p key={index} className={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
+            molestiae nihil placeat praesentium saepe sint veniam! Ad adipisci cumque deserunt earum enim exercitationem
+            facilis soluta, ut.
+          </p>
+        ))}
+      </section>
       <div className={styles.sticky_parent}>
         <div ref={stickyRef} className={styles.sticky}>
           <div ref={scrollSectionRef} className={styles.scroll_section}>
