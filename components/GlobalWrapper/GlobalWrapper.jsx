@@ -13,8 +13,6 @@ const GlobalWrapper = ({ children }) => {
     '/house.jpg'
   ];
 
-  const descLorem = {};
-
   useEffect(() => {
     const handleScroll = () => {
       transform();
@@ -78,31 +76,15 @@ const GlobalWrapper = ({ children }) => {
           </div>
         </div>
       </section>
-
-      <section className={styles.section}>
-        <div className={styles.container}>
-          <h1>About</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
+      <section className={styles.sectionTeam}>
+        <h1 className={styles.title}>Contact</h1>
+        {[...Array(15)].map((_, index) => (
+          <p key={index} className={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
             molestiae nihil placeat praesentium saepe sint veniam! Ad adipisci cumque deserunt earum enim exercitationem
-            facilis soluta, ut.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
-            molestiae nihil placeat praesentium saepe sint veniam! Ad adipisci cumque deserunt earum enim exercitationem
-            facilis soluta, ut.</p>
-        </div>
+            facilis soluta, ut.
+          </p>
+        ))}
       </section>
-
-      <section className={styles.section}>
-        <div className={styles.container}>
-          <h1>End</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
-            molestiae nihil placeat praesentium saepe sint veniam! Ad adipisci cumque deserunt earum enim exercitationem
-            facilis soluta, ut.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
-            molestiae nihil placeat praesentium saepe sint veniam! Ad adipisci cumque deserunt earum enim exercitationem
-            facilis soluta, ut.</p>
-        </div>
-      </section>
-
       {children}
     </>
   );
