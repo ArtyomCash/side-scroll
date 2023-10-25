@@ -85,7 +85,9 @@ video {
   font-size: 100%;
   vertical-align: baseline;
 }
-
+body {
+  background-color: #092B61;
+}
 /*Links*/
 a {
   text-decoration: none;
@@ -157,6 +159,10 @@ button {
 button,
 input {
   line-height: normal;
+}
+button {
+  background: none;
+  cursor: pointer;
 }
 
 /*Table*/

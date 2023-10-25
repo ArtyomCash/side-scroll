@@ -1,0 +1,19 @@
+%wrapper {
+  max-width: 1160px;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+
+%title {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 24px;
+  margin-bottom: 32px;
+}
+%description {
+  color: #7c7070;
+  letter-spacing: 1.5px;
+  line-height: 16px;
+  text-align: justify;
+}

@@ -1,0 +1,12 @@
+@use "styles/const";
+
+.about {
+  @extend %wrapper;
+  min-height: 200vh;
+}
+.title {
+  @extend %title;
+}
+.desc {
+  @extend %description;
+}

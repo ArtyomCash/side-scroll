@@ -3,8 +3,9 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 // import styles from '@/styles/Home.module.css'
 import styles from './index.module.scss'
-
-const inter = Inter({ subsets: ['latin'] });
+import GlobalWrapper from '../components/GlobalWrapper/GlobalWrapper'
+import About from "../components/About";
+// const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -15,8 +16,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.home}>
-          <button>trtgretgrt</button>
+          <GlobalWrapper>
+            <About />
+          </GlobalWrapper>
         {/*<Image
           src="/vercel.svg"
           alt="Vercel Logo"
@@ -25,7 +27,6 @@ export default function Home() {
           height={24}
           priority
         />*/}
-      </main>
     </>
   )
 }
