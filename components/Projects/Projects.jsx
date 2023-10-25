@@ -40,7 +40,7 @@ const Projects = () => {
     <section className={styles.sectionProjects}>
       <div ref={stickyRef} className={styles.sticky}>
         <div ref={scrollSectionRef} className={styles.scrollSection}>
-          <h1 className={styles.title}>Projects</h1>
+          <h1 className={styles.title} id='projects'>Projects</h1>
           <article className={styles.scrollSectionContainer}>
             {images.map((imgSrc, index) => (
               <Image

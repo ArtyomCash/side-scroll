@@ -14,9 +14,9 @@ export default function Home() {
       </Head>
         <GlobalWrapper>
           <Content title='About Us' numParagraphs={30} />
-          <Content title='TEAM' numParagraphs={15} />
+          <Content title='TEAM' numParagraphs={15} id='team' />
           <Projects />
-          <Content title='Contact' numParagraphs={15} />
+          <Content title='Contact' numParagraphs={15} id='contacts' />
         </GlobalWrapper>
     </>
   )
