@@ -33,7 +33,7 @@ const GlobalWrapper = ({ children }) => {
       const scrollSection = scrollSectionRef.current;
       if (scrollSection) {
         let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-        percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage;
+        percentage = percentage < 0 ? 0 : percentage > 135 ? 135 : percentage;
         scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
       }
     }
@@ -60,23 +60,24 @@ const GlobalWrapper = ({ children }) => {
           </p>
         ))}
       </section>
-      <div className={styles.sticky_parent}>
+      <section className={styles.sectionProjects}>
         <div ref={stickyRef} className={styles.sticky}>
-          <div ref={scrollSectionRef} className={styles.scroll_section}>
+          <h1 className={styles.title}>Projects</h1>
+          <div ref={scrollSectionRef} className={styles.scrollSection}>
             {images.map((imgSrc, index) => (
               <Image
                 key={index}
                 src={imgSrc}
                 alt="Image Alt Text"
                 className={styles.img}
-                width={1024}
+                width={1160}
                 height={578}
                 priority
               />
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       <section className={styles.section}>
         <div className={styles.container}>
