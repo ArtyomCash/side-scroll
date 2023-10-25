@@ -30,7 +30,7 @@ const Projects = () => {
       const scrollSection = scrollSectionRef.current;
       if (scrollSection) {
         let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-        percentage = percentage < 0 ? 0 : percentage > 135 ? 135 : percentage;
+        percentage = percentage < 0 ? 0 : percentage > 232 ? 232 : percentage;
         scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
       }
     }
@@ -39,19 +39,21 @@ const Projects = () => {
   return (
     <section className={styles.sectionProjects}>
       <div ref={stickyRef} className={styles.sticky}>
-        <h1 className={styles.title}>Projects</h1>
         <div ref={scrollSectionRef} className={styles.scrollSection}>
-          {images.map((imgSrc, index) => (
-            <Image
-              key={index}
-              src={imgSrc}
-              alt="Image Alt Text"
-              className={styles.img}
-              width={1160}
-              height={578}
-              priority
-            />
-          ))}
+          <h1 className={styles.title}>Projects</h1>
+          <article className={styles.scrollSectionContainer}>
+            {images.map((imgSrc, index) => (
+              <Image
+                key={index}
+                src={imgSrc}
+                alt="Image Alt Text"
+                className={styles.img}
+                width={1920}
+                height={750}
+                priority
+              />
+            ))}
+          </article>
         </div>
       </div>
     </section>
