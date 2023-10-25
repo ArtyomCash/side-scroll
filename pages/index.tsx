@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import GlobalWrapper from '../components/GlobalWrapper/GlobalWrapper'
-import Content from "../components/Content";
+import Content from '../components/Content';
+import Projects from '../components/Projects';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <GlobalWrapper>
           <Content title='About Us' numParagraphs={30} />
           <Content title='TEAM' numParagraphs={15} />
+          <Projects />
           <Content title='Contact' numParagraphs={15} />
         </GlobalWrapper>
     </>
