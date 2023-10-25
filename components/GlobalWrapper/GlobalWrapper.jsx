@@ -40,24 +40,7 @@ const GlobalWrapper = ({ children }) => {
   return (
     <>
       <Header />
-      <section className={styles.sectionAbout}>
-        <h1 className={styles.title}>About Us</h1>
-        {[...Array(30)].map((_, index) => (
-          <p key={index} className={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
-            molestiae nihil placeat praesentium saepe sint veniam! Ad adipisci cumque deserunt earum enim exercitationem
-            facilis soluta, ut.
-          </p>
-        ))}
-      </section>
-      <section className={styles.sectionTeam}>
-        <h1 className={styles.title}>Team</h1>
-        {[...Array(15)].map((_, index) => (
-          <p key={index} className={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
-            molestiae nihil placeat praesentium saepe sint veniam! Ad adipisci cumque deserunt earum enim exercitationem
-            facilis soluta, ut.
-          </p>
-        ))}
-      </section>
+      {children}
       <section className={styles.sectionProjects}>
         <div ref={stickyRef} className={styles.sticky}>
           <h1 className={styles.title}>Projects</h1>
@@ -76,16 +59,6 @@ const GlobalWrapper = ({ children }) => {
           </div>
         </div>
       </section>
-      <section className={styles.sectionTeam}>
-        <h1 className={styles.title}>Contact</h1>
-        {[...Array(15)].map((_, index) => (
-          <p key={index} className={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis doloremque in ipsum
-            molestiae nihil placeat praesentium saepe sint veniam! Ad adipisci cumque deserunt earum enim exercitationem
-            facilis soluta, ut.
-          </p>
-        ))}
-      </section>
-      {children}
     </>
   );
 };

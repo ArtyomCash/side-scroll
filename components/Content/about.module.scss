@@ -1,0 +1,18 @@
+@use "styles/const";
+
+.sectionAbout {
+  @extend %wrapper;
+  margin-bottom: 64px;
+}
+.title {
+  @extend %title;
+  margin-bottom: 32px;
+}
+
+.desc {
+  @extend %description;
+  margin-bottom: 16px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

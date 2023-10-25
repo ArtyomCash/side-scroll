@@ -1,17 +1,11 @@
 @use "styles/const";
 
-.sectionAbout {
-  @extend %wrapper;
-  height: 200vh;
-}
+
 .sectionTeam {
   @extend %wrapper;
-  height: 100vh;
 }
 
-.section {
-  height: 100vh;
-}
+.section {}
 
 .container {}
 
@@ -26,8 +20,7 @@
 
 .sectionProjects {
   @extend %wrapper;
-  height: 245vh; /*должно быть одинаковым 500vh*/
-  /*height: 1920px;; !*должно быть одинаковым 500vh*!*/
+  height: 245vh;
 }
 
 .sticky {
@@ -42,9 +35,8 @@
   position: absolute;
   top: 0;
   height: 100%;
-  //width: calc(930vh); /*должно быть одинаковым 500vh*/
   width: 200vw;
-  will-change: transform; /*небыло подсказки при написании !!!!!*/
+  will-change: transform;
   display: flex;
   justify-content: space-between;
   align-items: center;
