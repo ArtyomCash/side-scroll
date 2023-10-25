@@ -1,0 +1,41 @@
+.section {
+  height: 100vh;
+}
+
+.container {
+  padding: 5rem;
+}
+
+.sticky_parent {
+  height: 500vh; /*должно быть одинаковым 500vh*/
+  /*height: 1920px;; !*должно быть одинаковым 500vh*!*/
+}
+
+.sticky {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  border: 1px solid red;
+}
+
+.scroll_section {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1000vh; /*должно быть одинаковым 500vh*/
+  /*width: 1920px;*/
+  will-change: transform; /*небыло подсказки при написании !!!!!*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 32px;
+  padding: 0 5vw;
+}
+
+.img {
+  /*width: 800px;*/
+  height: 80%;
+  object-fit: cover;
+  object-position: center;
+}

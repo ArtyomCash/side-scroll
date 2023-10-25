@@ -2,6 +2,9 @@
 
 .about {
   @extend %wrapper;
+
+}
+.aboutUs {
   min-height: 200vh;
 }
 .title {
@@ -9,4 +12,14 @@
 }
 .desc {
   @extend %description;
+}
+.team {
+  min-height: 100vh;
+}
+.project {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 500vh;
+  border: 1px solid red;
 }

@@ -17,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
           <GlobalWrapper>
-            <About />
+            {/*<About />*/}
           </GlobalWrapper>
         {/*<Image
           src="/vercel.svg"
