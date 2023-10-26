@@ -1,7 +1,8 @@
-import { NextPage } from 'next/types';
+import { NextPage } from 'next';
 import Header from '../Header';
+import { GlobalWrapperProps } from './interface'
 
-const GlobalWrapper: NextPage = ({ children }) => {
+const GlobalWrapper: NextPage<GlobalWrapperProps> = ({ children }) => {
   return (
     <>
       <Header />
