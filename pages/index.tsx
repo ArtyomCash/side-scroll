@@ -1,9 +1,10 @@
-import Head from 'next/head'
-import GlobalWrapper from '../components/GlobalWrapper/GlobalWrapper'
+import Head from 'next/head';
+import GlobalWrapper from '../components/GlobalWrapper/GlobalWrapper';
 import Content from '../components/Content';
 import Projects from '../components/Projects';
+import { NextPage } from 'next';
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <>
       <Head>
@@ -12,12 +13,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <GlobalWrapper>
-          <Content title='About Us' numParagraphs={30} />
-          <Content title='TEAM' numParagraphs={15} id='team' />
-          <Projects />
-          <Content title='Contact' numParagraphs={15} id='contacts' />
-        </GlobalWrapper>
+      <GlobalWrapper>
+        <Content title='About Us' numParagraphs={30} />
+        <Content title='TEAM' numParagraphs={15} id='team' />
+        <Projects />
+        <Content title='Contact' numParagraphs={15} id='contacts' />
+      </GlobalWrapper>
     </>
-  )
+  );
 }
+
+export default Home;
