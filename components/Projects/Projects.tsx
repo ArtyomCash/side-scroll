@@ -1,16 +1,11 @@
-import styles from './projects.module.scss';
 import {useEffect, useRef} from "react";
 import Image from "next/image";
+import { images } from './imagesArray';
+import styles from './projects.module.scss';
 
 const Projects = () => {
   const stickyRef = useRef(null);
   const scrollSectionRef = useRef(null);
-
-  const images = [
-    '/car.jpg',
-    '/forest.jpg',
-    '/house.jpg'
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +22,7 @@ const Projects = () => {
   function transform() {
     if (stickyRef.current.parentElement) {
       const offsetTop = stickyRef.current.parentElement.offsetTop;
-      const scrollSection = scrollSectionRef.current;
+      const scrollSection = scrollSectionRef.current as HTMLElement;
       if (scrollSection) {
         let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
         percentage = percentage < 0 ? 0 : percentage > 232 ? 232 : percentage;
