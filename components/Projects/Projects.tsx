@@ -1,11 +1,12 @@
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
+// import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { images } from './imagesArray';
 import styles from './projects.module.scss';
 
 const Projects = () => {
-  const stickyRef = useRef(null);
-  const scrollSectionRef = useRef(null);
+  const stickyRef = useRef<HTMLDivElement | null>(null);
+  const scrollSectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,14 +21,14 @@ const Projects = () => {
   }, []);
 
   function transform() {
-    if (stickyRef.current.parentElement) {
-      const offsetTop = stickyRef.current.parentElement.offsetTop;
-      const scrollSection = scrollSectionRef.current as HTMLElement;
-      if (scrollSection) {
-        let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-        percentage = percentage < 0 ? 0 : percentage > 232 ? 232 : percentage;
-        scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
-      }
+    const stickyElement = stickyRef.current;
+    const scrollSectionElement = scrollSectionRef.current;
+
+    if (stickyElement && scrollSectionElement) {
+      const offsetTop = stickyElement.parentElement?.offsetTop || 0;
+      let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+      percentage = Math.min(Math.max(percentage, 0), 232);
+      scrollSectionElement.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
     }
   }
 
