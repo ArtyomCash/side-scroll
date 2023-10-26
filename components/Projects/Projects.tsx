@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-// import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { images } from './imagesArray';
 import styles from './projects.module.scss';
