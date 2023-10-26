@@ -1,6 +1,6 @@
 import { NextPage } from 'next/types';
 import styles from './about.module.scss';
-import { IContentProps } from './types';
+import { IContentProps } from './interface';
 
 const Content: NextPage<IContentProps> = ({ title, numParagraphs, id }) => {
   return (

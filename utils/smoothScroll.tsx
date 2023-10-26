@@ -1,7 +1,7 @@
 export const smoothScroll = (elementId: string, animationDuration: number, heightFromTop: number) => {
   const el = document.getElementById(elementId);
   if (el) {
-    const targetPosition = el.getBoundingClientRect().top + window.pageYOffset;
+    const targetPosition = el.getBoundingClientRect().top - heightFromTop;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
     const duration = animationDuration;

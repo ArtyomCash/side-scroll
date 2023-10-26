@@ -1,28 +1,26 @@
-import {NextPage} from "next/types";
+import { NextPage } from 'next/types';
 import { smoothScroll } from '../../utils/smoothScroll';
+import { headerMenu } from './menuArray';
 import styles from './header.module.scss';
 
-const Header :NextPage = () => {
+const Header: NextPage = () => {
   return (
     <header className={styles.header}>
-      <button className={styles.btn} type='button'>
-        About
-      </button>
-      <button className={styles.btn} type='button' onClick={() =>
-        smoothScroll('team', 1000, 100)}
-      >
-        Team
-      </button>
-      <button className={styles.btn} type='button' onClick={() =>
-        smoothScroll('projects', 1000, 10)}
-      >
-        Projects
-      </button>
-      <button className={styles.btn} type='button' onClick={() =>
-        smoothScroll('contacts', 1500, 10)}
-      >
-        Contacts
-      </button>
+      {headerMenu.map((item, index) => (
+        <button
+          className={styles.btn}
+          key={index}
+          type='button'
+          onClick={() =>
+            smoothScroll(
+              `${item.id}`,
+              item.animationDuration && item.animationDuration,
+              item.heightFromTop && item.heightFromTop
+            )
+          }>
+          {item.name}
+        </button>
+      ))}
     </header>
   );
 };
