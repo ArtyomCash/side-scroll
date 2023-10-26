@@ -26,7 +26,7 @@ const Projects = () => {
     if (stickyElement && scrollSectionElement) {
       const offsetTop = stickyElement.parentElement?.offsetTop || 0;
       let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-      percentage = Math.min(Math.max(percentage, 0), 232);
+      percentage = Math.min(Math.max(percentage, 0), 203);
       scrollSectionElement.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
     }
   }
