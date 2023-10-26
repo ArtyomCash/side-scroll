@@ -1,7 +1,8 @@
+import {NextPage} from "next/types";
 import { smoothScroll } from '../../utils/smoothScroll';
 import styles from './header.module.scss';
 
-const Header = () => {
+const Header :NextPage = () => {
   return (
     <header className={styles.header}>
       <button className={styles.btn} type='button'>
