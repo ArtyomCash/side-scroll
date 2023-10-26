@@ -14,8 +14,8 @@ const Header: NextPage = () => {
           onClick={() =>
             smoothScroll(
               `${item.id}`,
-              item.animationDuration && item.animationDuration,
-              item.heightFromTop && item.heightFromTop
+              item.animationDuration ?? 1000,
+              item.heightFromTop ?? 100
             )
           }>
           {item.name}
